@@ -1,0 +1,14 @@
+<% layout("./layouts/layout.eta") %>
+<ul>
+<li>Total answers: <%= it.total %></li>
+<li>Total number of correct answers: <%= it.correct %></li>
+<li>Total number of answers given to the questions created by the user: <%= it.user %></li>
+Five most: 
+
+<% it.five.forEach((question) =>{ %>
+    <li>Email: <%= question.email %> </li>
+<% }
+);
+%>
+
+</ul>

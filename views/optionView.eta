@@ -1,0 +1,40 @@
+<% layout("./layouts/layout.eta") %>
+<h1> Title: <%= it.question.title %></h1>
+<h2> Question: <%= it.question.question_text %></h2>
+<% if (it.options.length ===0) { %>
+    <form method="POST" action="/questions/<it.question.id>/delete">
+    <input type="submit" value="Delete question"/>
+    </form>
+<%}
+%>
+
+
+<form method="POST" action="/questions/<%= it.question.id %>/options">
+<input type="textarea" name="option_text" /><br/>
+<input type="checkbox" name="is_correct"  value="is_correct"/>Answer?<br/>
+<input type="submit" value="Submit!" /><br/>
+</form>
+
+
+<% it.options.forEach((option) =>{ %>
+    <li>Text: <%= option.option_text %>; is_correct: <%= option.is_correct %>
+    <form method="POST" action="/questions/<%= option.question_id%>/options/<%= option.id%>/delete">
+    <input type="submit" value="Delete option" /> <br>
+    </form>
+    </li>
+<% }
+);
+%>
+
+<h2>Error</h2>
+<% if (it.errors) { %>
+<ul>
+    <% Object.keys(it.errors).forEach((attribute) => { %>
+        <% Object.values(it.errors[attribute]).forEach((err) => { %>
+            <li><%= err %></li>
+        <% }); %>
+    <% }); %>
+</ul>
+<% } %>
+
+<li><a href="/questions">Back</li>
