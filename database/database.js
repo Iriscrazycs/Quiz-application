@@ -3,7 +3,11 @@ import { Pool } from "../deps.js";
 
 const CONCURRENT_CONNECTIONS = 2;
 const connectionPool = new Pool({
-  
+  hostname: "ella.db.elephantsql.com",
+  database: "pwmltwkx",
+  user: "pwmltwkx",
+  password: "H_AahHQo3Q6vm-sNMLEmie7AxxFLv8uF",
+  port: 5432,
 }, CONCURRENT_CONNECTIONS);
 
 
