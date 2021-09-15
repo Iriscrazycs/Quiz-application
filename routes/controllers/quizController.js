@@ -11,13 +11,14 @@ const showQuiz =async({response}) =>{
     response.redirect(`/quiz/${number}`);
 }
 
-const showAll =async({params,render}) =>{
+const showAll =async({params,render,user}) =>{
     console.log("here");
     const question_id =params.id;
     const data ={
         
         options: await service.showO(question_id ),
         question: await service.showOneData(question_id),
+        user,
     };
     
     console.log("data");

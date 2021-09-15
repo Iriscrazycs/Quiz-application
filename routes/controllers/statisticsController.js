@@ -2,7 +2,7 @@ import * as statistics from "../../services/statistics.js";
 import render from "../../middlewares/renderMiddleware.js";
 
 
-const showStat =async({user,render}) =>{
+const showStat =async({user,render,state}) =>{
     console.log("statistics1");
     const number1= await statistics.countTotal(user.id);
     console.log("statistics2");
@@ -20,7 +20,10 @@ const showStat =async({user,render}) =>{
     }
     console.log(data.total);
     console.log(data.five);
-    console.log("statistics2");
+    console.log("statistics2222");
+    
+    console.log(data.user);
+    console.log("eww");
     render("statisticsView.eta",data);
 
 }

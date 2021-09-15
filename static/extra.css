@@ -1,22 +1,5 @@
-.navbar navbar-expand-md navbar-light bg-light{
-    display: inline-block;
-    background-color: blue;
-}
-body{
-    color:black;
-    font-family: system-ui;
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-    
 
-}
 
-#try {
-    color:red;
-    
-}
 
 label{
     display: inline-block;
@@ -24,13 +7,11 @@ label{
 }
 
 table{
-    table-layout: auto;
-    width: 100%;
+    width: 200%;
 }
 
 
-
-input[type=text], textarea { width: 80%; }
+input[type=text], textarea { width: 100%; }
 
 th{
     flex-wrap: wrap;

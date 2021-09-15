@@ -2,7 +2,7 @@ import render from "../../middlewares/renderMiddleware.js";
 import * as services from "../../services/services.js";
 import {validasaur} from "../../deps.js"; 
 
-const showOption =async({response,params,render}) =>{
+const showOption =async({response,params,render,user}) =>{
     console.log("show options");
     console.log("ttt");
     console.log(params.id);
@@ -11,10 +11,11 @@ const showOption =async({response,params,render}) =>{
         
         options: await services.showO(question_id ),
         question: await services.showOneData(question_id),
+        user,
     };
     
-    console.log("data");
-    console.log(data.options);
+    console.log("dataaaaaaa");
+    console.log(data.user);
     
     render("optionView.eta", data);
 }

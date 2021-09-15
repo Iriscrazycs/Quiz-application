@@ -5,7 +5,7 @@ import { bcrypt } from "../../deps.js";
 import {validasaur} from "../../deps.js"; 
 
 const registerForm =async({render}) =>{
-    render("registerView.eta"   );
+    render("registerView.eta");
 }
 
 const validation ={
@@ -65,6 +65,8 @@ const loginUser =async({request,response,state}) =>{
     console.log(user);
     if (compare){
         await state.session.set("user", user);
+        console.log("test session");
+        console.log(await state.session.get("user"));
         response.redirect("/questions");
     }else{
         //login page with error messages.

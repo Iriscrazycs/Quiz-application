@@ -2,10 +2,17 @@ import render from "../../middlewares/renderMiddleware.js";
 import * as services from "../../services/services.js";
 import {validasaur} from "../../deps.js"; 
 
-const showQues =async({render,user}) =>{
+const showQues =async({render,user,state}) =>{
     console.log("hello");
-    
-    render("questionView.eta", {questions: await services.showData(user.id)});//actucally need id, dont know get
+    console.log(user);
+    console.log("secondvpart");
+    console.log();
+    const data={
+        questions: await services.showData(user.id),
+        user: user,
+    };
+    console.log(data.user);
+    render("questionView.eta", data);//actucally need id, dont know get
 }
 
 const validation ={
