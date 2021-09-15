@@ -1,18 +1,30 @@
 <% layout("./layouts/layout.eta") %>
-<h1>Are you ready?</h1>
+<h1>Questions</h1>
+<p>Here, you can input the names and brief instroductions of questions you 
+want to ask. After inputting the content, click "submit" to save the changes.
+The saved quesitons are showed and to click the one wanted direct to the page where 
+options of it can be added and modified.</p>
 <form method="POST" action="/questions">
-<input type="text" name="title"><br/>
-<input type="text" name="question_text"><br/>
-<input type="submit" value="Submit!"><br/>
+<p>
+<label>Name:</label><input class="inputArea" type="text" name="title" placeholder="Name">
+</p>
+<p>
+<label>Des:</label><textarea class="inputArea" name="question_text" placeholder="Descriptions"></textarea>
+</p>
+<input type="submit" value="Submit!" class="btn btn-primary" >
 </form>
+</br>
+<h4>List of questions</h4>
 <% it.questions.forEach((question) =>{ %>
     <li><a href="/questions/<%= question.id %>"><%= question.title %></a><br>
     </li>
 <% }
 );
 %>
-<h2>Error</h2>
+
+<section>
 <% if (it.errors) { %>
+<p>Errors</p>
 <ul>
     <% Object.keys(it.errors).forEach((attribute) => { %>
         <% Object.values(it.errors[attribute]).forEach((err) => { %>
@@ -21,3 +33,4 @@
     <% }); %>
 </ul>
 <% } %>
+</section>

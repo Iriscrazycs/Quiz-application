@@ -4,6 +4,8 @@ import {validasaur} from "../../deps.js";
 
 const showOption =async({response,params,render}) =>{
     console.log("show options");
+    console.log("ttt");
+    console.log(params.id);
     const question_id =params.id;
     const data ={
         

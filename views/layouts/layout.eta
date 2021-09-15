@@ -2,40 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://unpkg.com/papercss@1.8.2/dist/paper.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/static/extra.css">
+  
   <title>Questions!</title>
 </head>
 <body>
-<% if (it.user) { %>
-    <nav class="border fixed split-nav">
-        <div class="nav-brand">
-        <div class="collapsible">
-            <input id="collapsible1" type="checkbox" name="collapsible1">
-            <label for="collapsible1">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-            </label>
-            <div class="collapsible-body">
-                <ul class="inline">
-                    <li><a href="/questions">questions</a></li>
-                    <li><a href="/quiz">quiz</a></li>
-                    <li><a href="/statistics">statistics</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-  <% } %>
-  
-  
-  
-  
-  
-  
-  <div class="paper container">
+
+<nav class="navbar navbar-expand-md navbar-light bg-light" >
+
+
+<span class="navbar-brand">Navigation</span>
+
+<ul class="nav" style="justify-content: center;">
+<li class="nav-item active"><a class="nav-link" href="/questions">Questions</a></li>
+<li class="nav-item"><a class="nav-link" href="/quiz">Quizs</a></li>
+<li class="nav-item"><a class="nav-link" href="/statistics">Statistics</a></li>
+</ul>
+
+</nav>
+
+
+<div class="container">
     <%~ it.body %>
-  </div>
+</div>
+
 </body>
 </html>

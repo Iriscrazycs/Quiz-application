@@ -1,0 +1,38 @@
+.navbar navbar-expand-md navbar-light bg-light{
+    display: inline-block;
+    background-color: blue;
+}
+body{
+    color:black;
+    font-family: system-ui;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    
+
+}
+
+#try {
+    color:red;
+    
+}
+
+label{
+    display: inline-block;
+    width: 100px;
+}
+
+table{
+    table-layout: auto;
+    width: 100%;
+}
+
+
+
+input[type=text], textarea { width: 80%; }
+
+th{
+    flex-wrap: wrap;
+}
+
