@@ -16,6 +16,7 @@
 <textarea name="option_text" /></textarea>
 
 <input type="checkbox" name="is_correct"  value="is_correct"/>right?</br>
+</br>
 <input type="submit" value="Submit!" class="btn btn-primary" /><br/>
 </form>
 </br>

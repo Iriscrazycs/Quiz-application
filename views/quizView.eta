@@ -1,12 +1,17 @@
 <% layout("./layouts/layout.eta") %>
 <h3><%= it.question.title %></h3>
 <p><%= it.question.question_text %></p>
+<table class="table table-striped table-bordered">
+<tbody>
 <% it.options.forEach((option) =>{ %>
-    <li><%= option.option_text %>
-    <form method="POST" action="/quiz/<%= option.question_id%>/options/<%= option.id%>" />
-    <input type="submit" value="Choose" /> <br>
-    </form>
-    </li>
+    <tr>
+    <th width="85%"><%= option.option_text %></th>
+    <th width="15%"><form method="POST" action="/quiz/<%= option.question_id%>/options/<%= option.id%>" />
+    <input type="submit" value="Choose" class="btn btn-primary" /> <br>
+    </form></th>
+    </tr>
 <% }
 );
 %>
+</tbody>
+</table>
