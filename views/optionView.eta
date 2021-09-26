@@ -4,8 +4,8 @@
 <h3><%= it.question.title %></h3>
 <p><%= it.question.question_text %></p>
 <% if (it.options.length ===0) { %>
-    <form method="POST" action="/questions/<it.question.id>/delete">
-    No options: <input type="submit" value="Delete question?"/>
+    <form method="POST" action="/questions/<%= it.question.id %>/delete">
+    No inputed options: <input type="submit" value="Do you want to delete this question?"/>
     </form>
     </br>
 <%}

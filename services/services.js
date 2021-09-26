@@ -43,7 +43,7 @@ const addData =async(id,title,question_text) =>{
 }
 
 const deleteData =async(id) =>{
-    console.log("arrive in delete question2");
+    console.log("arrive in delete question2 database");
     await executeQuery("DELETE from questions where id=$1",
     id);
 }
@@ -64,6 +64,9 @@ const addO =async(question_id,option_text,is_correct)=>{
 }
 
 const removeO =async(question_id,id) =>{
+    console.log("remove option in database");
+    await executeQuery("DELETE from question_answers WHERE question_id=$1 and question_answer_option_id =$2;",
+    question_id,id);
     await executeQuery("DELETE from question_answer_options WHERE question_id=$1 and id =$2;",
     question_id,id);
 }

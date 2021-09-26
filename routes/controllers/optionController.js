@@ -73,6 +73,7 @@ const addOption = async({request, response,params,render}) =>{
 }
 
 const removeOption =async ({params,response}) =>{
+    console.log("this is removw option");
     const questionId=params.questionId;
     const optionId=params.optionId;
     await services.removeO(questionId,optionId);

@@ -44,10 +44,10 @@ const addQues = async({request, response,render,user}) =>{
     
 
 const deleteQues =async({params, response}) =>{
-    console.log("arrive in delete question1");
+    console.log("arrive in delete detele question1");
     const id=params.id;
     await services.deleteData(id);
-    console.log("arrive in delete question3");
+    console.log("finish the delete question3");
     response.redirect("/questions");
 
 }
